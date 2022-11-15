@@ -17,26 +17,27 @@ def _isValid(pwd):
     check5 = False  # alphanumeric flag
 
     # If c is long enough, set corresponding flag to True.
-    ...
+    if len(pwd) >= 8:
+        check1 = True
 
     for c in pwd:
         # For each character c in pwd...
 
-        if ...:
+        if c.isdigit():
             # If c is a digit, set corresponding flag to True.
-            ...
-        elif ...:
+            check2 = True
+        elif c.isupper():
             # If c is in upper case, set corresponding flag to True.
-            ...
-        elif ...:
+            check3 = True
+        elif c.islower():
             # If c is in lower case, set corresponding flag to True.
-            ...
-        elif ...:
+            check4 = True
+        elif not c.isalnum():
             # If c is not alphanumeric, set corresponding flag to True.
-            ...
+            check5 = True
 
     # Return True if all flags are True, and False otherwise.
-    ...
+    return check1 and check2 and check3 and check4 and check5
 
 
 if __name__ == '__main__':

@@ -11,21 +11,24 @@ def main():
 # Return the number of zeros in s.
 def _zeros(s):
     # Base case: if s is the empty string, return 0.
-    ...
+    if s == "":
+        return 0
 
     # Recursive step: if the first character in s is 0, return 1 + _zeros(rest of s). Otherwise,
     # return _zeros(rest of s).
-    ...
+    return 1 + _zeros(s[1:]) if s[0] == "0" else _zeros(s[1:])
 
 
 # Return the number of ones in s.
 def _ones(s):
     # Base case: if s is the empty string, return 0.
-    ...
+    if s == "":
+        return 0
 
     # Recursive step: if the first character in s is 1, return 1 + _ones(rest of s). Otherwise,
     # return _ones(rest of s).
-    ...
+
+    return 1 + _ones(s[1:]) if s[0] == "1" else _ones(s[1:])
 
 
 if __name__ == '__main__':

@@ -11,10 +11,11 @@ def main():
 # Returns the reverse of the string s.
 def _reverse(s):
     # Base case: if s is the empty string, return an empty string.
-    ...
+    if s == "":
+        return ""
 
     # Recursive step: return last character in s + _reverse(s excluding last character).
-    ...
+    return s[-1] + _reverse(s[:-1])
 
 
 if __name__ == '__main__':
