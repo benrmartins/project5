@@ -7,16 +7,20 @@ from interval import Interval
 class Rectangle:
     # Constructs a new rectangle given the x and y intervals.
     def __init__(self, xint, yint):
-        self._xint = ...
-        self._yint = ...
+        self._xint = xint
+        self._yint = yint
 
     # Returns the area of this rectangle.
     def area(self):
-        ...
+        width = self._xint.upper() - self._xint
+        height = self._yint.lower() - self._yint
+        return width * height
 
     # Returns the perimeter of this rectangle.
     def perimeter(self):
-        ...
+        width = self._xint.upper() - self._xint
+        height = self._yint.lower() - self._yint
+        return (width + height) * 2
 
     # Returns True if this rectangle contains the point (x, y), and False otherwise.
     def contains(self, x, y):

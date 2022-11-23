@@ -6,16 +6,16 @@ import sys
 class Point:
     # Constructs a new point given its x and y coordinates.
     def __init__(self, x, y):
-        self._x = ...
-        self._y = ...
+        self._x = x
+        self._y = y
 
     # Returns the Euclidean distance between this point and other.
     def distanceTo(self, other):
-        ...
+        return ((self._x - other._x ** 2) + (self._y - other._y)) ** 0.5
 
     # Return a string representation of this point.
     def __str__(self):
-        ...
+        return '(' + str(self._x) + ", " + str(self._y) + ')'
 
 
 # Unit tests the data type (DO NOT EDIT).

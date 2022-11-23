@@ -6,28 +6,28 @@ import sys
 class Interval:
     # Construct a new interval given its lower and upper bounds.
     def __init__(self, lbound, ubound):
-        self._lbound = ...
-        self._ubound = ...
+        self._lbound = lbound
+        self._ubound = ubound
 
     # Returns the lower bound of this interval.
     def lower(self):
-        ...
+        return self._lbound
 
     # Returns the upper bound of this interval.
     def upper(self):
-        ...
+        return self._ubound
 
     # Returns True if this interval contains the point x, and False otherwise.
     def contains(self, x):
-        ...
+        return self._lbound <= x and self._ubound >= x
 
     # Returns True if this interval intersects other, and False otherwise.
     def intersects(self, other):
-        ...
+        return not self._lbound > other._ubound or self._ubound < other._lbound
 
     # Returns a string representation of this interval.
     def __str__(self):
-        ...
+        return ""
 
 
 # Unit tests the data type (DO NOT EDIT).
