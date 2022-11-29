@@ -11,16 +11,18 @@ class Blob:
 
     # Adds pixel (x, y) to this blob.
     def add(self, x, y):
-        ...
+        self._x = (self._x * self._pixels + x) / (self._pixels + 1)
+        self._y = (self._y * self._pixels + y) / (self._pixels + 1)
+        self._pixels += 1
 
     # Returns the mass of this blob, ie, the number of pixels in it.
     def mass(self):
-        ...
+        return self._pixels
 
     # Returns the Euclidean distance between the center of mass of this blob and the center of
     # mass of the other blob.
     def distanceTo(self, other):
-        ...
+        return ((self._x - other._x) ** 2 + (self._y - other._y) ** 2) ** 0.5
 
     # Returns a string representation of this blob.
     def __str__(self):

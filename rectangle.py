@@ -12,27 +12,27 @@ class Rectangle:
 
     # Returns the area of this rectangle.
     def area(self):
-        width = self._xint.upper() - self._xint
-        height = self._yint.lower() - self._yint
+        width = self._xint.upper() - self._xint.lower()
+        height = self._yint.upper() - self._yint.lower()
         return width * height
 
     # Returns the perimeter of this rectangle.
     def perimeter(self):
-        width = self._xint.upper() - self._xint
-        height = self._yint.lower() - self._yint
+        width = self._xint.upper() - self._xint.lower()
+        height = self._yint.upper() - self._yint.lower()
         return (width + height) * 2
 
     # Returns True if this rectangle contains the point (x, y), and False otherwise.
     def contains(self, x, y):
-        ...
+        return self._xint.contains(x) and self._yint.contains(y)
 
     # Returns True if this rectangle intersects other, and False otherwise.
     def intersects(self, other):
-        ...
+        return self._xint.intersects(other._xint) and self._yint.intersects(other._yint)
 
     # Returns a string representation of this rectangle.
     def __str__(self):
-        ...
+        return str(self._xint) + " x " + str(self._yint)
 
 
 # Unit tests the data type (DO NOT EDIT).

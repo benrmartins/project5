@@ -23,11 +23,11 @@ class Interval:
 
     # Returns True if this interval intersects other, and False otherwise.
     def intersects(self, other):
-        return not self._lbound > other._ubound or self._ubound < other._lbound
+        return not (self._lbound > other._ubound or self._ubound < other._lbound)
 
     # Returns a string representation of this interval.
     def __str__(self):
-        return ""
+        return "[" + str(self._lbound) + ", " + str(self._ubound) + "]"
 
 
 # Unit tests the data type (DO NOT EDIT).

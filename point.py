@@ -11,11 +11,11 @@ class Point:
 
     # Returns the Euclidean distance between this point and other.
     def distanceTo(self, other):
-        return ((self._x - other._x ** 2) + (self._y - other._y)) ** 0.5
+        return ((self._x - other._x) ** 2 + (self._y - other._y) ** 2) ** 0.5
 
     # Return a string representation of this point.
     def __str__(self):
-        return '(' + str(self._x) + ", " + str(self._y) + ')'
+        return "(" + str(self._x) + ", " + str(self._y) + ")"
 
 
 # Unit tests the data type (DO NOT EDIT).
