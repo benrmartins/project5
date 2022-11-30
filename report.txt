@@ -1,46 +1,86 @@
 1. Enter the number of hours it took you to complete the project between
    the <<< and >>> signs below (eg, <<<10>>>).
 
-   <<< >>>
+   <<<5>>>
    
 2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
    between the <<< and >>> signs below (eg, <<<3>>>).
 
-   <<< >>>
+   <<<4>>>
 
 3. Did you receive help from anyone? List their names, status (classmate, 
    CS110 grad, TA, other), and the nature of help received.
 
    Name               Status       Help Received
-   ----               ------       -------------
+  Probin Sharma       TA          explained the problem and the approach to solve it on the chalk board
 
-   ...                ...          ...
 
 4. Provide a short description of how you approached each problem, issues you 
    encountered, and how you resolved those issues.
 
    Problem 1 (Particle Representation)
-      Approach: ...
+      Approach: In this problem I first had to create instance variables for the x and y coordinate and the pixels.
+      After that I had to add the pixels to the x and y variable to the add function. I add that by seting both x and y
+      equal to the running average to update the center of mass of blob b by (self._y/x * self._pixels + y/x) /
+      (self._pixels + 1) and add 1 to the pixel. Next in the mass method I returned the pixels. After that I had to
+      find Euclidean distance between the center of mass of blob and the center of mass. I did that by using the distance
+      formula.
 
-      Issues and resolution: ...
+      Issues and resolution: This problem was very straight forward, and I did not have too much trouble on it. Doing
+      the lectures showed me the basics of what I needed to for using classes and objects. The directions told me excaly
+      what I needed to do. I had a bit of difficulty with distanceTo method because I did not realize I needed to add parethsis
+      around the equations before squaring it by 0.5. ((self._x - other._x) ** 2 + (self._y - other._y) ** 2) ** 0.5.
 
    Problem 2 (Particle Identification)
-      Approach: ...
+      Approach: First I needed to initialize a empty list. Then I had to create a 2d array using stdarray.create2D
+      from the with and the height. Next I need to loop through the width and height of the picture. next I set the variable
+      to the Blob object inside the loop. Then I called the variable find _findBlob() with the appropriate arguments.
+      Lastly for that method I used an if statement to add blob to blobs if it has a non-zero mass. Next I had to use
+      reccursion to find where the blob is at. for my base case, return if pixel (i, j) is out of bounds. After that I
+      had to Mark the pixel (i, j) and Add the pixel (i, j) to the blob. Lastly I Recursively call _findBlob() on
+      the N, E, W, and S pixels.
 
-      Issues and resolution: ...
+      Issues and resolution:  I had difficulty trying to figure out on how to use recursion in the ._findBlob(). It was causing
+      me lots of trouble and logical errors. Using recursion can really cause a infinite loop if the base case is not done
+      correctly. I was having a hard time trying to figure out how to call find block and what to put inside it parameters.
+      I realized that I need to call findblob and add and subtract both i and j from 1 4 times and the permeates already in the method
+      self._findBlob(pic, tau, i, j - 1, marked, blob). This caused me to have no errors.
 
    Problem 3 (Particle Tracking)
-      Approach: ...
+      Approach: First I had to accept command-line arguments pixels, tau, and delta. Then I got the list of beads currBeads
+      that have at least pixels and stored it into a variable. Next I had loop through the currBead to find a bead prevBead
+      from prevBead. Inside the loop next I had to for in both the current bead and the previous beads, so I can check that no bead
+      is no further than delta and is closest to currBead. if such a bead is found, write its distance (string ’%.4f\n’) to
+      currBead. Lastly if such a bead is found, I wrote to the output its distance in string format.
 
-      Issues and resolution: ...
+      Issues and resolution: In this problem I had alot of difficulty with trying to find the find a bead prevBead from
+      prevBeads that is no further han delta and is closest to currBead. First in the issue I knew I need to use the for
+      loop to iterate through the previous bead and current bead I just did not know how. I tried to use two separate for
+      loops first and iterate through them separately whiling doing that I realized it would not wok because I need both to
+      check if the beads were no further than delta and is closest to delta. But I found out that I need to use a nested loop,
+      so I can use the if statement effectively. After that I was able to loop through and check the beads using an if statement.
+
+
 
    Problem 4 (Data Analysis)
-      Approach: ...
+      Approach: First I had initialized variables ETA, RHO, T, and R to appropriate values of int and floats. Then I got all the
+      floats and stored it into the variable. then I have to Calculate var as the sum of the squares of the n displacements read
+      from standard input. I did that by using d. Next I to Estimates Boltzmann’s constant using 6 * math.pi * var
+      * ETA * RHO. Lastly I had to get Avogadro’s constant from Boltzmann’s constant R / BOLTZMANN and print BOLTZMANN, AVOGADRO
+      to the terminal.
 
-      Issues and resolution: ...
+      Issues and resolution: I had difficulty with trying to calculate var as the sum of the squares of the n displacements. It was causing
+      to try to figure out how to loop through the numbers and square them and add them all together. First I was trying
+      to use a for loop through and them sum all of it together.but found out I should have done used a lamda and a map mathod
+      to iterate through the and add the sums together by sum(map(lambda r: (METERS_PER_PIXEL * r) ** 2, displacements))
+      / (2 * len(displacements)). After fixing it my code was alot less lines and clearer. I was able to use a oneliner to
+      calculate sum of the squares of the n displacements.
 
 5. List any other comments here. Feel free to provide any feedback on how
    much you learned from doing the assignment, and whether you enjoyed
    doing it.
 
-   ...
+   This project was by far the hardest one I have done so far. It took a lot of trial and error trying to figure some logical
+   errors out. But finishing this made me realized how much I improved in programming since the beginning of the semester.
+   even though it was alot harder than the previous one, I had alot more knowledge than the other projects especially the first one.
+   Even though I did not enjoy it while I was completing the project. I felt accomplished after I finished it.
